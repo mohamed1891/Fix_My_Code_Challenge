@@ -9,6 +9,7 @@
  *
  * Return: 1 on success, -1 on failure
  */
+
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
     dlistint_t *current = *head;
@@ -37,7 +38,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
     if (current == NULL)
     {
-        return -1; // Index out of bounds
+        return -1;
     }
 
     if (current->prev != NULL)
@@ -46,7 +47,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
     }
     else
     {
-        return -1; // Index out of bounds
+        return -1;
     }
 
     if (current->next != NULL)
