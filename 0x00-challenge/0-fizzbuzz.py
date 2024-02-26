@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """ FizzBuzz
 """
 import sys
@@ -17,12 +18,12 @@ def fizzbuzz(n):
 
     tmp_result = []
     for i in range(1, n + 1):
-        if (i % 3) == 0:
+        if (i % 15) == 0:
+            tmp_result.append("FizzBuzz")
+        elif (i % 3) == 0:
             tmp_result.append("Fizz")
         elif (i % 5) == 0:
             tmp_result.append("Buzz")
-        elif (i % 15) == 0:
-            tmp_result.append("FizzBuzz")
         else:
             tmp_result.append(str(i))
     print(" ".join(tmp_result))
@@ -35,5 +36,8 @@ if __name__ == '__main__':
         print("Example: ./0-fizzbuzz.py 89")
         sys.exit(1)
 
-    number = int(sys.argv[1])
-    fizzbuzz(number)
+    try:
+        number = int(sys.argv[1])
+        fizzbuzz(number)
+    except ValueError:
+        print("Invalid input. Please provide a valid integer.")
