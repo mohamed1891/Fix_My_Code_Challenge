@@ -37,11 +37,18 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
     if (current == NULL)
     {
-        return -1;
+        return -1; // Index out of bounds
     }
 
-    current->prev->next = current->next;
-    
+    if (current->prev != NULL)
+    {
+        current->prev->next = current->next;
+    }
+    else
+    {
+        return -1; // Index out of bounds
+    }
+
     if (current->next != NULL)
     {
         current->next->prev = current->prev;
